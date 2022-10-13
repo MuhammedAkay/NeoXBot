@@ -69,7 +69,7 @@ module.exports = {
               embed.setThumbnail(kişi.avatarURL({ dynamic: true }));
           }
           
-          interaction.reply({ embeds: [embed], components: [row] });
+          //interaction.reply({ embeds: [embed], components: [row] });
                                  
       } else {
           
