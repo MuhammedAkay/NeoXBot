@@ -16,6 +16,7 @@
     "discord-gamecord": "^2.1.0",
     "discord.js": "^14.6.0",
     "discord.js-akinator": "^4.0.3",
+    "dotenv": "^16.0.3",
     "ewingdb": "^0.0.1",
     "fs": "^0.0.1-security",
     "mathjs": "^11.3.0",
