@@ -8,8 +8,8 @@ const table = new AsciiTable()
   .setHeading("Slash Komut", "Durumu")
   .setBorder("|", "=", "0", "0");
 
-const TOKEN = process.env.token;
-const ClientId = '992875196681814027';
+const TOKEN = client.config.token;
+const ClientId = client.user.id;
 
 const rest = new REST({ version: "10" }).setToken(TOKEN);
 
