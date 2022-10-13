@@ -1,4 +1,5 @@
 module.exports = {
+    token: '',
     prefix: '!',
     id: '992875196681814027',
     sahip: ['838734789791055922'],
