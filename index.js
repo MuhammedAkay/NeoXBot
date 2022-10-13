@@ -27,7 +27,8 @@ Partials.ThreadMember
 ],
 
 });
-reuire('dotenv').config;
+
+require('dotenv').config;
 const config = require("./config.js");
 
 client.commands = new Collection();
