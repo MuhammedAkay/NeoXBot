@@ -1,6 +1,6 @@
 const fs = require("fs");
 const chalk = require("chalk");
-
+const config = require('./config.js');
 const { REST, Routes, PermissionsBitField } = require("discord.js");
 
 const AsciiTable = require("ascii-table");
@@ -8,8 +8,8 @@ const table = new AsciiTable()
   .setHeading("Slash Komut", "Durumu")
   .setBorder("|", "=", "0", "0");
 
-const TOKEN = client.config.token;
-const ClientId = client.user.id;
+const TOKEN = config.token;
+const ClientId = config.botid;
 
 const rest = new REST({ version: "10" }).setToken(TOKEN);
 
