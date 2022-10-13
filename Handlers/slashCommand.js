@@ -1,6 +1,6 @@
 const fs = require("fs");
 const chalk = require("chalk");
-const config = require('./config.js');
+const config = require('../config.js');
 const { REST, Routes, PermissionsBitField } = require("discord.js");
 
 const AsciiTable = require("ascii-table");
