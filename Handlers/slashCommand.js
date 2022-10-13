@@ -9,7 +9,7 @@ const table = new AsciiTable()
   .setBorder("|", "=", "0", "0");
 
 const TOKEN = config.token;
-const ClientId = config.botid;
+const ClientId = config.id;
 
 const rest = new REST({ version: "10" }).setToken(TOKEN);
 
