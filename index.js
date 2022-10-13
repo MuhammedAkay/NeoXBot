@@ -49,10 +49,10 @@ module.exports = client;
 client.login(config.token);
 require('uptime-discord-bot');
 
-client.on('ready', () => {
+/*client.on('ready', () => {
   var testChannel = client.channels.cache.find(channel => channel.id === '1029501254071750707');
 
   setInterval(() => {
     testChannel.send('Bot Aktif');
   }, 90000);
-});
+});*/
