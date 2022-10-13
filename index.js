@@ -46,7 +46,7 @@ module.exports = client;
 });
 
 
-client.login(process.env.token);
+client.login(config.token);
 require('uptime-discord-bot');
 
 client.on('ready', () => {
