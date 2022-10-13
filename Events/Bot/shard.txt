@@ -1,0 +1,80 @@
+const { EmbedBuilder, WebhookClient } = require("discord.js");
+const client = require("../..");
+const resim = 'https://cdn.discordapp.com/avatars/992875196681814027/f0d7f041408f329d059f49163f8cc3bb.png?size=1024';
+const webhookClient = new WebhookClient({ url: 'https://discord.com/api/webhooks/1004790123357020242/cUP03qHgDDnotTNzB2wC5srJOBwCiTbb4o3ytbeOIaZMT5nWwiTbunRxv47tXC6Hewot' });
+
+//Shard Error
+client.on('shardError', (error, shard) => {
+    webhookClient.send({
+      username: 'Shard',
+	avatarURL: resim,
+    embeds: [
+      new EmbedBuilder()
+      .setTitle(`${shard} Numaralı Shard'da Hata Oluştu`)
+            .setDescription(`\`\`\`\n${error}\n\`\`\``)
+    ]
+  })
+});
+
+//Shard create
+client.on("shardCreate", async shard => {
+  webhookClient.send({
+      username: 'Shard',
+	avatarURL: resim,
+    embeds: [
+      new EmbedBuilder()
+      .setTitle('Shard Oluşturuldu')
+            .setDescription(`**#${shard}** Numaralı Shard Oluşturuldu `)
+    ]
+  })
+});
+
+//Shard ready
+client.on("shardReady", async shard => {
+    webhookClient.send({
+      username: 'Shard',
+	avatarURL: resim,
+    embeds: [
+      new EmbedBuilder()
+        .setTitle('Shard Aktif')
+        .setDescription(`Shard **#${shard}** **${client.guilds.cache.size}** Sunucu Ve **${client.users.cache.size}** Kullanıcı İçin Hazır.`)]
+    })
+});
+
+//Shard disconnect
+client.on("shardDisconnect", async shard => {
+    webhookClient.send({
+      username: 'Shard',
+	avatarURL: resim,
+      embeds: [new EmbedBuilder()
+.setTitle('Bağlantı Kesildi')
+.setDescription(`Shard **#${shard}** Sunucularıyla Ve Kullanıcılarıyla Bağlantısı Geçici Olarak Kesildi...`)
+              ]
+    })
+});
+
+//Shard reconnecting
+client.on("shardReconnecting", async shard => {
+    webhookClient.send({
+      username: 'Shard',
+	avatarURL: resim,
+      embeds: [
+      new EmbedBuilder()
+.setTitle('Yeniden Bağlantı Sağlandı')
+        .setDescription(`Shard **#${shard}** Bu Donanım İçeren Sunucularda Yeniden Bağlantı Devam Ediyor...`)
+      ]
+    })
+});
+
+//Shard resume
+client.on("shardResume", async shard => {
+    webhookClient.send({
+      username: 'Shard',
+	avatarURL: resim,
+    embeds: [
+      new EmbedBuilder()
+.setTitle('Shard Devam Ediyor')
+.setDescription(`Shard **#${shard}** **${client.guilds.cache.size}** Sunucularına Ve **${client.users.cache.size}** Kullanıcılarına Başarıyla Yeniden Bağlanıldı.`)
+    ]
+    })
+});
